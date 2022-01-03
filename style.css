@@ -1,0 +1,313 @@
+/* CSS RESET--------------------------------------------------------- */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* END OF RESET ----------------------------------------------------- */
+
+
+/* CUSTOM PROPERTIES ------------------------------------------------ */
+:root {
+    --primary-moderate-violet: hsl(263, 55%, 52%);
+    --primary-very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --primary-very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --primary-white: hsl(0, 0%, 100%);
+    --neutral-gray: hsl(0, 0%, 81%);
+    --neutral-light-grayish-blue: hsl(210, 46%, 95%);
+
+    --fw-normal: 500;
+    --fw-bold: 600;
+
+    /* 
+1. "Verified Graduate" has the same color
+as the person's name with 50% opacity
+
+2. Review paragraphs inside the quotations
+have the same color as well, but are at 70% opacity
+    */
+}
+
+h1 {
+    font-size: 0;
+    width: 1px;
+    height: 1px;
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    border: 0!important;
+    padding: 0!important;
+    margin: 0!important;
+    clip: rect(1px,1px,1px,1px);
+}
+
+body {
+    font-size: 0.8125rem;
+    padding: 4.5rem 1.5rem;
+    background-color: var(--neutral-light-grayish-blue);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    min-height: 100vh;
+}
+
+main {
+    display: grid;
+    gap: 1.465rem;
+}
+
+.card {
+    padding: 1.5rem 1.9rem;
+    border-radius: 0.5rem;
+}
+
+
+/* UTILITIES -------------------------------------------------------- */
+
+.card-1 {
+    background: var(--primary-moderate-violet) url(images/bg-pattern-quotation.svg) no-repeat right 11% top;
+}
+
+.card-2 {
+    background-color: var(--primary-very-dark-grayish-blue);
+}
+
+.card-3,
+.card-5 {
+    background-color: var(--primary-white);
+}
+
+.card-4 {
+    background-color: var(--primary-very-dark-blackish-blue);
+}
+
+.font-light {
+    color: var(--primary-white);
+}
+
+.font-dark {
+    color: var(--primary-very-dark-blackish-blue);
+}
+
+
+/* CARDS ------------------------------------------------------------ */
+
+.user {
+    display: flex;
+}
+
+.user-img {
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 50%;
+    border: 1.4px solid var(--primary-white);
+}
+
+.card-1 .user-img {
+    border-color: var(--neutral-gray);
+}
+.card-2 .user-img {
+    border-color: var(--primary-very-dark-grayish-blue);
+}
+.card-3 .user-img,
+.card-5 .user-img {
+    border-color: var(--primary-white);
+}
+.card-4 .user-img {
+    border-color: var(--primary-moderate-violet);
+}
+
+.user-info {
+    padding-left: 1rem;
+    line-height: 1.3;
+}
+
+.user-info-name {
+    font-weight: var(--fw-bold);
+    font-size: 0.8rem;
+}
+
+.user-info-status {
+    font-weight: var(--fw-normal);
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+.review-title {
+    font-weight: var(--fw-bold);
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+    padding: 1rem 0.1rem 0.95rem;
+    letter-spacing: 0.35px;
+}
+
+.review-quote {
+    opacity: 0.7;
+    padding: 0 1.05rem 0.45rem 0.1rem;
+    line-height: 1.4;
+    letter-spacing: 0.035px;
+}
+
+
+/* FOOTER ----------------------------------------------------------- */
+
+.attribution {
+    margin-top: 0.5rem;
+    font-size: 0.625rem;
+    text-align: center;
+    color: var(--primary-moderate-violet);
+}
+
+.attribution a {
+    color: var(--primary-moderate-violet);
+    text-decoration: none;
+    font-weight: var(--fw-bold);
+}
+
+/* MEDIA QUERIES ---------------------------------------------------- */
+
+@media (min-width: 48em) {
+    body {
+        padding-inline: 4rem;
+    }
+}
+@media (min-width: 60em) {
+    body {
+        padding: 5rem 3rem;
+    }
+
+    main {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: auto auto;
+        row-gap: 1.5rem;
+        column-gap: 1.95rem;
+    }
+
+    .card-1 {
+        grid-area: 1 / 1 / 2 / 3;
+        background-position: right 18.1% top;
+    }
+
+    .card-2 {
+        grid-area: 1 / 3 / 2 / 4;
+    }
+    
+    .card-3 {
+        grid-area: 2 / 1 / -1 / 2;
+    }
+
+    .card-4 {
+        grid-area: 2 / 2 / -1 / 4;
+    }
+
+    .card-5 {
+        grid-area: 1 / 4 / -1 / -1;
+    }
+
+    .review-title {
+        padding-top: 1.1rem;
+    }
+
+    .review-quote {
+        padding-right: 0.05rem;
+    }
+
+    .card-3 .review-quote,
+    .card-4 .review-quote,
+    .card-5 .review-quote {
+        padding-top: 0.45rem;
+        padding-bottom: 0;
+    }
+
+    /* .card-3,
+    .card-5 {
+        box-shadow: 20px 30px 40px -15px hsl(0, 0%, 81%);
+    } */
+
+    /* .card-4 {
+        box-shadow: 0px 20px 35px -15px hsl(0, 0%, 81%);
+    } */
+
+    .card-3,
+    .card-5 {
+        box-shadow: rgba(50, 50, 93, 0.2) 10px 30px 60px -20px;
+    }
+
+    .card-4 {
+        box-shadow: rgba(50, 50, 93, 0.2) 0px 30px 50px -20px;
+    }
+}
+
+@media (min-width: 75em) {
+    body {
+        padding: 10.2rem 10.3rem;
+    }
+}

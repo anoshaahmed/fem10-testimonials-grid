@@ -1,4 +1,4 @@
-## /Challenge
+## /challenge
 This directory contains the designs, provided by Frontend Mentor, that my solution is supposed to look like.
 
 

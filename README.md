@@ -40,7 +40,7 @@ The mobile design VS My mobile solution<br>
 ### Links
 
 - Solution URL: [FrontEnd Mentor: My Solution](https://www.frontendmentor.io/solutions/testimonials-grid-section-flexbox-grid-mobilefirst-responsive-WVxZ0kX6-)
-- Live Site URL: [GitHub Page: Testimonials Grid Section](https://anoshaahmed.github.io/fem-testimonials-grid/)
+- Live Site URL: [GitHub Page: Testimonials Grid Section](https://anoshaahmed.github.io/fem10-testimonials-grid/)
 
 ## My process
 
